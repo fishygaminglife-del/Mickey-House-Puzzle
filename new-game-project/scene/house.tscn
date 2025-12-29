@@ -1,8 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://2jm7bak3okmy"]
+[gd_scene load_steps=14 format=3 uid="uid://2jm7bak3okmy"]
 
+[ext_resource type="Script" uid="uid://c0svapshnhvau" path="res://scripts/house.gd" id="1_52fq0"]
 [ext_resource type="Texture2D" uid="uid://b6v4roe2xonsq" path="res://images/d914344c0d86cd0cc0408bfb74308b9f.jpg" id="1_vjqwo"]
 [ext_resource type="PackedScene" uid="uid://brercndsqliux" path="res://scene/player.tscn" id="2_ae14o"]
-[ext_resource type="PackedScene" uid="uid://dwgbgjri2w0g6" path="res://scene/minnie.tscn" id="3_ae14o"]
+[ext_resource type="PackedScene" uid="uid://kfuf5461l2i6" path="res://scene/QuestItem.tscn" id="4_52fq0"]
+[ext_resource type="PackedScene" uid="uid://c858pibqkb3dw" path="res://text_box.tscn" id="6_2813k"]
+[ext_resource type="FontFile" uid="uid://i81x7klh0q1j" path="res://fonts/Chewy/Chewy-Regular.ttf" id="7_qg36w"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ae14o"]
 size = Vector2(100, 720)
@@ -10,20 +13,147 @@ size = Vector2(100, 720)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3bjdp"]
 size = Vector2(1280, 100)
 
+[sub_resource type="Animation" id="Animation_qg36w"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_2813k"]
+resource_name = "text"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer/SadMessag:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimationPlayer/SadMessag:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimationPlayer/Unknown:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_66jkb"]
+resource_name = "text2"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer/Instructions1:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimationPlayer/Instructions:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimationPlayer/Instructions1:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_g7cke"]
+resource_name = "GameBoard"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer/Instructions:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimationPlayer/GameBoard:visible_ratio")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimationPlayer/GameBoard:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_66jkb"]
+_data = {
+&"GameBoard": SubResource("Animation_g7cke"),
+&"RESET": SubResource("Animation_qg36w"),
+&"text": SubResource("Animation_2813k"),
+&"text2": SubResource("Animation_66jkb")
+}
+
 [node name="House" type="Node2D"]
+script = ExtResource("1_52fq0")
 
 [node name="BG" type="Sprite2D" parent="."]
 position = Vector2(642.2222, 362.06247)
 scale = Vector2(0.6248916, 0.6248916)
 texture = ExtResource("1_vjqwo")
 
-[node name="Player" parent="." instance=ExtResource("2_ae14o")]
-position = Vector2(342, 495)
-
-[node name="Minnie" parent="." instance=ExtResource("3_ae14o")]
-position = Vector2(917, 474)
-
 [node name="Borders" type="Node2D" parent="."]
+position = Vector2(-1, 0)
 
 [node name="Side Border" type="StaticBody2D" parent="Borders"]
 
@@ -40,7 +170,7 @@ shape = SubResource("RectangleShape2D_ae14o")
 [node name="Top Border" type="StaticBody2D" parent="Borders"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/Top Border"]
-position = Vector2(645, 266)
+position = Vector2(642, 351)
 shape = SubResource("RectangleShape2D_3bjdp")
 
 [node name="Bottom Border" type="StaticBody2D" parent="Borders"]
@@ -48,3 +178,84 @@ shape = SubResource("RectangleShape2D_3bjdp")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/Bottom Border"]
 position = Vector2(641, 771)
 shape = SubResource("RectangleShape2D_3bjdp")
+
+[node name="QuestItem" parent="." instance=ExtResource("4_52fq0")]
+position = Vector2(617, 473)
+scale = Vector2(0.775, 0.775)
+
+[node name="Player" parent="." instance=ExtResource("2_ae14o")]
+position = Vector2(385, 552.99994)
+rotation = 0.2617994
+scale = Vector2(0.90869653, 0.8198347)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_66jkb")
+}
+
+[node name="TextBox" parent="AnimationPlayer" instance=ExtResource("6_2813k")]
+offset_left = 351.0
+offset_top = 80.0
+offset_right = 909.8169
+offset_bottom = 262.0
+
+[node name="SadMessag" type="Label" parent="AnimationPlayer"]
+visible = false
+offset_left = 379.0
+offset_top = 127.0
+offset_right = 893.0
+offset_bottom = 214.0
+theme_override_fonts/font = ExtResource("7_qg36w")
+theme_override_font_sizes/font_size = 32
+text = "Mickey... come on, it's going to start soon! I really wanted you here."
+autowrap_mode = 2
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="Unknown" type="Label" parent="AnimationPlayer"]
+visible = false
+offset_left = 353.0
+offset_top = 83.0
+offset_right = 568.0
+offset_bottom = 121.0
+theme_override_font_sizes/font_size = 22
+text = "Unknown"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Instructions1" type="Label" parent="AnimationPlayer"]
+visible = false
+offset_left = 379.0
+offset_top = 127.0
+offset_right = 893.0
+offset_bottom = 214.0
+theme_override_fonts/font = ExtResource("7_qg36w")
+theme_override_font_sizes/font_size = 32
+text = "Use arrow keys to move around, click items to see them."
+autowrap_mode = 2
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="Instructions" type="Label" parent="AnimationPlayer"]
+visible = false
+offset_left = 353.0
+offset_top = 83.0
+offset_right = 568.0
+offset_bottom = 121.0
+theme_override_font_sizes/font_size = 22
+text = "Instructions"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GameBoard" type="Label" parent="AnimationPlayer"]
+visible = false
+offset_left = 379.0
+offset_top = 127.0
+offset_right = 893.0
+offset_bottom = 214.0
+theme_override_fonts/font = ExtResource("7_qg36w")
+theme_override_font_sizes/font_size = 32
+text = "You have found the game, click it to play it."
+autowrap_mode = 2
+visible_characters = 0
+visible_ratio = 0.0

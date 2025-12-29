@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://kfuf5461l2i6"]
+
+[ext_resource type="Script" uid="uid://bp8w6md5kn2pa" path="res://scripts/QuestItem.gd" id="1_bqyaa"]
+[ext_resource type="Texture2D" uid="uid://dgmopt8p5vmj4" path="res://images/box2.png" id="3_2xk68"]
+[ext_resource type="Texture2D" uid="uid://xxwejo7xlhs0" path="res://images/gamebox.png" id="4_n6is4"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_n6is4"]
+radius = 100.12492
+
+[node name="QuestItem" type="Area2D" groups=["Item"]]
+script = ExtResource("1_bqyaa")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_n6is4")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-6, -44.99999)
+scale = Vector2(0.55698085, 0.5569807)
+texture = ExtResource("3_2xk68")
+
+[node name="Gamebox" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(1, 0)
+scale = Vector2(0.46464646, 0.46464646)
+texture = ExtResource("4_n6is4")

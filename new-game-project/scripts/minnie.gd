@@ -1,7 +1,6 @@
-extends Area2D
+### NPC.gd
 
+extends Node
 
-
-func _on_body_entered(body: Node2D) -> void:
-	print('body entered')
-	print(body)
+@export var npc_id: String
+@export var npc_name: String

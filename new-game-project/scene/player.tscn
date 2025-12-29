@@ -8,9 +8,11 @@ script = ExtResource("1_hjaqi")
 speed = 200
 
 [node name="PlayerImage" type="Sprite2D" parent="."]
-position = Vector2(-7.1054274e-15, 6.999999)
-scale = Vector2(0.2, 0.2)
+position = Vector2(-1, -1)
+scale = Vector2(0.1730939, 0.1730939)
 texture = ExtResource("2_8wbsr")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(-3.6496148, -7.427024)
+scale = Vector2(0.87941754, 0.8674099)
 polygon = PackedVector2Array(-46, 140, -5, 140, 26, 119, 42, 122, 67, 128, 91, 107, 110, 69, 99, 41, 67, 32, 32, 38, 40, 10, 61, -95, 53, -119, 32, -133, -36, -149, -104, -130, -153, -64, -155, -52, -145, -39, -88, -57, -67, -32, -49, 17, -49, 57, -70, 113, -67, 128, -56, 135)
