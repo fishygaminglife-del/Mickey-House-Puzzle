@@ -1,0 +1,50 @@
+[gd_scene load_steps=6 format=3 uid="uid://2jm7bak3okmy"]
+
+[ext_resource type="Texture2D" uid="uid://b6v4roe2xonsq" path="res://images/d914344c0d86cd0cc0408bfb74308b9f.jpg" id="1_vjqwo"]
+[ext_resource type="PackedScene" uid="uid://brercndsqliux" path="res://scene/player.tscn" id="2_ae14o"]
+[ext_resource type="PackedScene" uid="uid://dwgbgjri2w0g6" path="res://scene/minnie.tscn" id="3_ae14o"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ae14o"]
+size = Vector2(100, 720)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3bjdp"]
+size = Vector2(1280, 100)
+
+[node name="House" type="Node2D"]
+
+[node name="BG" type="Sprite2D" parent="."]
+position = Vector2(642.2222, 362.06247)
+scale = Vector2(0.6248916, 0.6248916)
+texture = ExtResource("1_vjqwo")
+
+[node name="Player" parent="." instance=ExtResource("2_ae14o")]
+position = Vector2(342, 495)
+
+[node name="Minnie" parent="." instance=ExtResource("3_ae14o")]
+position = Vector2(917, 474)
+
+[node name="Borders" type="Node2D" parent="."]
+
+[node name="Side Border" type="StaticBody2D" parent="Borders"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/Side Border"]
+position = Vector2(1334, 364)
+shape = SubResource("RectangleShape2D_ae14o")
+
+[node name="Side Border 2" type="StaticBody2D" parent="Borders"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/Side Border 2"]
+position = Vector2(-46, 362)
+shape = SubResource("RectangleShape2D_ae14o")
+
+[node name="Top Border" type="StaticBody2D" parent="Borders"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/Top Border"]
+position = Vector2(645, 266)
+shape = SubResource("RectangleShape2D_3bjdp")
+
+[node name="Bottom Border" type="StaticBody2D" parent="Borders"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/Bottom Border"]
+position = Vector2(641, 771)
+shape = SubResource("RectangleShape2D_3bjdp")

@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://dwgbgjri2w0g6"]
+
+[ext_resource type="Texture2D" uid="uid://b4j0t8ekwg24w" path="res://images/Minnie Mouse.png" id="1_g3b22"]
+[ext_resource type="Script" uid="uid://c8vwd7kbd5ke4" path="res://scripts/minnie.gd" id="1_h37ha"]
+
+[node name="Minnie" type="Area2D"]
+script = ExtResource("1_h37ha")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-3, -5)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_g3b22")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(52, 147, 49, 31, 85, -18, 99, -74, 77, -87, 51, -145, 3, -162, -47, -166, -86, -133, -102, 14, -84, 60, -66, 140, -49, 151, 37, 152)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
