@@ -1,0 +1,69 @@
+[gd_scene load_steps=9 format=3 uid="uid://pyfb77v0jnhj"]
+
+[ext_resource type="Texture2D" uid="uid://ch7o08dicx38r" path="res://images/Puzzle1BG.jpg" id="1_meen0"]
+[ext_resource type="Texture2D" uid="uid://b5b2fw1tpr67b" path="res://images/PuzzleMatchFaces/CardBorder.png" id="2_0w0rs"]
+[ext_resource type="Texture2D" uid="uid://bxmb73gtoyhcg" path="res://images/PuzzleMatchFaces/MickeyFace.png" id="3_e244p"]
+[ext_resource type="Texture2D" uid="uid://d2hv3l5s3ffpq" path="res://images/PuzzleMatchFaces/MinnieFace.png" id="4_dcpgt"]
+[ext_resource type="Texture2D" uid="uid://dwgqk0gnhxxg7" path="res://images/PuzzleMatchFaces/GoofyFace.png" id="5_pfjpx"]
+[ext_resource type="Texture2D" uid="uid://ofiu3lws3tys" path="res://images/PuzzleMatchFaces/DaisyFace.png" id="6_pkv1j"]
+[ext_resource type="Texture2D" uid="uid://bwflady3abrpj" path="res://images/PuzzleMatchFaces/PlutoFace.png" id="7_ix2fw"]
+[ext_resource type="Texture2D" uid="uid://b1a3vw8hto638" path="res://images/PuzzleMatchFaces/donald-duck-cartoon-free-vector (1).jpg" id="8_aa1vg"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Puzzle1bg" type="Sprite2D" parent="."]
+modulate = Color(0.3180198, 0.31801978, 0.31801975, 1)
+position = Vector2(640, 363.5)
+scale = Vector2(1, 0.98625)
+texture = ExtResource("1_meen0")
+
+[node name="Mickey" type="Area2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Mickey"]
+texture = ExtResource("2_0w0rs")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Mickey"]
+texture = ExtResource("3_e244p")
+
+[node name="Minnie" type="Area2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Minnie"]
+texture = ExtResource("2_0w0rs")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Minnie"]
+texture = ExtResource("4_dcpgt")
+
+[node name="Goofy" type="Area2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Goofy"]
+texture = ExtResource("2_0w0rs")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Goofy"]
+texture = ExtResource("5_pfjpx")
+
+[node name="Donald" type="Area2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Donald"]
+texture = ExtResource("2_0w0rs")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Donald"]
+
+[node name="Daisy" type="Area2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Daisy"]
+texture = ExtResource("2_0w0rs")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Daisy"]
+texture = ExtResource("6_pkv1j")
+
+[node name="Pluto" type="Area2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Pluto"]
+texture = ExtResource("2_0w0rs")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Pluto"]
+texture = ExtResource("7_ix2fw")
+
+[node name="DonaldDuckCartoonFreeVector(1)" type="Sprite2D" parent="."]
+position = Vector2(2214, -703)
+texture = ExtResource("8_aa1vg")

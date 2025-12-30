@@ -1,8 +1,7 @@
 extends Area2D
 
 
-@export var item_id: String = ""
-@export var item_quantity: int = 1
+
 signal pressed
 
 
@@ -16,5 +15,9 @@ func _input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton \
 	and event.pressed \
 	and event.button_index == MOUSE_BUTTON_LEFT:
-		$Gamebox.visible=true
-		emit_signal("pressed")
+		counter +=1 
+		if counter == 1:
+			$Gamebox.visible=true
+			emit_signal("pressed")
+		if counter == 2:
+			get_tree().change_scene_to_file("res://scene/puzzle.tscn")
