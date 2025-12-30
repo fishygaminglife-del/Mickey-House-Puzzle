@@ -21,9 +21,8 @@ func box_pressed():
 	$QuestItem/CollisionShape2D.disabled = true	
 	$AnimationPlayer/TextBox.visible = true
 	$AnimationPlayer.play("GameBoard")
-	await get_tree().create_timer(5).timeout
-	$AnimationPlayer/TextBox.visible = false
 	await $AnimationPlayer.animation_finished
+	$AnimationPlayer/TextBox.visible = false
 	$QuestItem/CollisionShape2D.disabled = false
 	
 func game_pressed():
