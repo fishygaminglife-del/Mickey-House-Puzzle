@@ -1,10 +1,11 @@
-[gd_scene load_steps=14 format=3 uid="uid://2jm7bak3okmy"]
+[gd_scene load_steps=15 format=3 uid="uid://2jm7bak3okmy"]
 
 [ext_resource type="Script" uid="uid://c0svapshnhvau" path="res://scripts/house.gd" id="1_52fq0"]
 [ext_resource type="Texture2D" uid="uid://b6v4roe2xonsq" path="res://images/d914344c0d86cd0cc0408bfb74308b9f.jpg" id="1_vjqwo"]
 [ext_resource type="PackedScene" uid="uid://brercndsqliux" path="res://scene/player.tscn" id="2_ae14o"]
 [ext_resource type="PackedScene" uid="uid://kfuf5461l2i6" path="res://scene/QuestItem.tscn" id="4_52fq0"]
 [ext_resource type="PackedScene" uid="uid://c858pibqkb3dw" path="res://text_box.tscn" id="6_2813k"]
+[ext_resource type="Texture2D" uid="uid://cfnrccodp4yjo" path="res://images/door.png" id="7_66jkb"]
 [ext_resource type="FontFile" uid="uid://i81x7klh0q1j" path="res://fonts/Chewy/Chewy-Regular.ttf" id="7_qg36w"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ae14o"]
@@ -183,6 +184,11 @@ shape = SubResource("RectangleShape2D_3bjdp")
 position = Vector2(617, 473)
 scale = Vector2(0.775, 0.775)
 
+[node name="Door" type="Sprite2D" parent="."]
+position = Vector2(69, 516)
+scale = Vector2(1.10715, 1.10715)
+texture = ExtResource("7_66jkb")
+
 [node name="Player" parent="." instance=ExtResource("2_ae14o")]
 position = Vector2(385, 552.99994)
 rotation = 0.2617994
@@ -194,6 +200,7 @@ libraries = {
 }
 
 [node name="TextBox" parent="AnimationPlayer" instance=ExtResource("6_2813k")]
+visible = false
 offset_left = 351.0
 offset_top = 80.0
 offset_right = 909.8169
@@ -201,6 +208,7 @@ offset_bottom = 262.0
 metadata/_edit_use_anchors_ = true
 
 [node name="SadMessag" type="Label" parent="AnimationPlayer"]
+visible = false
 offset_left = 379.0
 offset_top = 127.0
 offset_right = 893.0
@@ -214,6 +222,7 @@ visible_ratio = 0.0
 metadata/_edit_use_anchors_ = true
 
 [node name="Unknown" type="Label" parent="AnimationPlayer"]
+visible = false
 offset_left = 353.0
 offset_top = 83.0
 offset_right = 568.0
@@ -225,6 +234,7 @@ vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="Instructions1" type="Label" parent="AnimationPlayer"]
+visible = false
 offset_left = 379.0
 offset_top = 127.0
 offset_right = 893.0
@@ -238,6 +248,7 @@ visible_ratio = 0.0
 metadata/_edit_use_anchors_ = true
 
 [node name="Instructions" type="Label" parent="AnimationPlayer"]
+visible = false
 offset_left = 353.0
 offset_top = 83.0
 offset_right = 568.0
@@ -249,6 +260,7 @@ vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="GameBoard" type="Label" parent="AnimationPlayer"]
+visible = false
 offset_left = 379.0
 offset_top = 127.0
 offset_right = 893.0

@@ -67,6 +67,42 @@ tracks/2/keys = {
 
 [sub_resource type="Animation" id="Animation_qg36w"]
 length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer/NoteFinder:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimationPlayer/NoteFinder:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimationPlayer/You:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_2813k"]
 resource_name = "text"
@@ -171,15 +207,15 @@ position = Vector2(45.00916, 503.02182)
 scale = Vector2(1.1307693, 1.1307693)
 script = ExtResource("5_7gtv7")
 
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+position = Vector2(-3.5977974, 0)
+scale = Vector2(0.9357394, 1)
+polygon = PackedVector2Array(-37.15096, -107.02612, 25.638157, -87.57031, 23.86945, 102.565735, -35.38225, 118.48407)
+disabled = true
+
 [node name="Door" type="Sprite2D" parent="Area2D"]
 position = Vector2(19.447788, 16.783539)
 texture = ExtResource("5_tqr75")
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
-position = Vector2(-3.5977974, 0)
-scale = Vector2(0.93573946, 1)
-polygon = PackedVector2Array(-37.15096, -107.02612, 25.638157, -87.57031, 23.86945, 102.565735, -35.38225, 118.48407)
-disabled = true
 
 [node name="Player" parent="." instance=ExtResource("4_371fw")]
 position = Vector2(385, 552.99994)
@@ -238,6 +274,7 @@ libraries = {
 }
 
 [node name="TextBox" parent="AnimationPlayer" instance=ExtResource("5_7b831")]
+visible = false
 offset_left = 351.0
 offset_top = 80.0
 offset_right = 909.8169
@@ -268,5 +305,5 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
-[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]

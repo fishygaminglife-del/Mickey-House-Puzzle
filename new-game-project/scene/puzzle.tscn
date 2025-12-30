@@ -357,6 +357,20 @@ text = "Minnie's Memory Game"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="GameCongradulations" type="Label" parent="."]
+visible = false
+offset_left = 40.999985
+offset_top = 492.0
+offset_right = 1322.0
+offset_bottom = 628.0
+rotation = -0.27925268
+theme_override_colors/font_color = Color(0.97565645, 0, 0.22197235, 1)
+theme_override_fonts/font = ExtResource("9_e244p")
+theme_override_font_sizes/font_size = 50
+text = "CONGRATULATIONS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="TimerLabel" type="Label" parent="."]
 offset_left = 21.0
 offset_top = 16.0

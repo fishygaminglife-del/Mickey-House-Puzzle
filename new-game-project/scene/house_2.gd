@@ -1,11 +1,16 @@
 extends Node2D
 
 
-# Called when the node enters the scene tree for the first time.
+
 func _ready() -> void:
-	pass # Replace with function body.
+	$NotepadFull.pressed.connect(pressed)
+	$NotepadFull/CollisionShape2D2.disabled = true
+	$Area2D/CollisionPolygon2D.disabled = true
+	$AnimationPlayer/TextBox.visible = true
+	$AnimationPlayer.play("NoteFind")
+	await $AnimationPlayer.animation_finished
+	$AnimationPlayer/TextBox.visible = false
+	$NotepadFull/CollisionShape2D2.disabled = false
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func pressed():
+	$Area2D/CollisionPolygon2D.disabled=false

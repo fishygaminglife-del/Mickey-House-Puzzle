@@ -3,6 +3,7 @@ extends Node2D
 @onready var timer_label = $TimerLabel
 
 
+
 var time_left = 30
 var timer_running = true
 
@@ -13,6 +14,7 @@ var first_card = null
 var second_card = null
 
 func _ready() -> void:
+	$GameCongradulations.visible = false
 	$AnimationPlayer/TextBox.visible = true
 	$AnimationPlayer.play("MemoryGame")
 	await get_tree().create_timer(5).timeout
@@ -54,8 +56,10 @@ func check_match():
 		second_card = null
 	
 func game_complete():
+	$GameCongradulations.visible = true
 	await get_tree().create_timer(3).timeout
-	get_tree().change_scene_to_file("res://scene/house.tscn")
+	$GameCongradulations.visible = false
+	get_tree().change_scene_to_file("res://scene/house2.tscn")
 	
 func time_up():
 	print("Time is Up!")
