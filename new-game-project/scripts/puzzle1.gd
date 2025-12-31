@@ -66,5 +66,5 @@ func time_up():
 	$TimesUp.visible = true
 	time_left = 0
 	await get_tree().create_timer(3.0).timeout
-	$TimesUp
+	$TimesUp.visible=false
 	get_tree().reload_current_scene()
