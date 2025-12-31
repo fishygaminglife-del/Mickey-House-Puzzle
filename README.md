@@ -33,4 +33,10 @@ You can play the game directly in your browser using the link below:
 👉 https://fishygaming-life.itch.io/mickey-mouse-club-house-puzzle
 
 ---
+## Credit
+- Google Fonts for Chewy and Goldman
+- Wallpapers.com for the different backgrounds
+- Ar.inspired.pencil.com for the character faces
+- Credit to Pintrest and Vecteezy for the rest of the images use
 
+---
