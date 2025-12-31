@@ -1,9 +1,244 @@
-[gd_scene load_steps=2 format=3 uid="uid://j8ibbwmpbmbh"]
+[gd_scene load_steps=17 format=3 uid="uid://j8ibbwmpbmbh"]
 
-[ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://icon.svg" id="1_4fixh"]
+[ext_resource type="Script" uid="uid://cma1co2547pkl" path="res://scripts/party.gd" id="1_6tgdq"]
+[ext_resource type="Texture2D" uid="uid://borh03hehi1f5" path="res://images/partrybg.jpg" id="1_euqe0"]
+[ext_resource type="Texture2D" uid="uid://b4j0t8ekwg24w" path="res://images/Minnie Mouse.png" id="2_hhi8e"]
+[ext_resource type="PackedScene" uid="uid://brercndsqliux" path="res://scene/player.tscn" id="3_0du13"]
+[ext_resource type="Texture2D" uid="uid://5lkbkmeudqe6" path="res://images/donald.png" id="4_xuh7a"]
+[ext_resource type="Texture2D" uid="uid://bdpr1hwslw10f" path="res://images/daisy.png" id="5_gr3qj"]
+[ext_resource type="Texture2D" uid="uid://bmrko48urswwl" path="res://images/goofy.png" id="6_my56l"]
+[ext_resource type="Texture2D" uid="uid://ccvjegx5q5olg" path="res://images/pluto.png" id="7_5fky2"]
+[ext_resource type="Texture2D" uid="uid://hatjraiyaq1x" path="res://images/Credit Button.png" id="8_xuh7a"]
+[ext_resource type="PackedScene" uid="uid://c858pibqkb3dw" path="res://text_box.tscn" id="9_5nxnd"]
+[ext_resource type="FontFile" uid="uid://i81x7klh0q1j" path="res://fonts/Chewy/Chewy-Regular.ttf" id="10_mjj1n"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xfmc7"]
+size = Vector2(100, 720)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m07ga"]
+size = Vector2(1280, 100)
+
+[sub_resource type="Animation" id="Animation_hw4hw"]
+resource_name = "Party_scene"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../AnimationPlayer2/Instructions2:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../AnimationPlayer2/Instructions2:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../AnimationPlayer2/Instructions3:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../AnimationPlayer2/TextBox:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_xgdpq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../AnimationPlayer2/Instructions2:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../AnimationPlayer2/Instructions2:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../AnimationPlayer2/Instructions3:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../AnimationPlayer2/TextBox:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7fc25"]
+_data = {
+&"Party_scene": SubResource("Animation_hw4hw"),
+&"RESET": SubResource("Animation_xgdpq")
+}
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_6tgdq")
 
-[node name="Icon" type="Sprite2D" parent="."]
-position = Vector2(585, 321)
-texture = ExtResource("1_4fixh")
+[node name="Partrybg" type="Sprite2D" parent="."]
+position = Vector2(640.4444, 360)
+scale = Vector2(1.5999999, 1.5999999)
+texture = ExtResource("1_euqe0")
+
+[node name="Borders" type="Node2D" parent="."]
+position = Vector2(242, 506)
+
+[node name="Side Border" type="StaticBody2D" parent="Borders"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/Side Border"]
+position = Vector2(1088, -145)
+shape = SubResource("RectangleShape2D_xfmc7")
+
+[node name="Side Border 2" type="StaticBody2D" parent="Borders"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/Side Border 2"]
+position = Vector2(-292, -147)
+shape = SubResource("RectangleShape2D_xfmc7")
+
+[node name="Top Border" type="StaticBody2D" parent="Borders"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/Top Border"]
+position = Vector2(396, -304)
+shape = SubResource("RectangleShape2D_m07ga")
+
+[node name="Bottom Border" type="StaticBody2D" parent="Borders"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/Bottom Border"]
+position = Vector2(395, 262)
+shape = SubResource("RectangleShape2D_m07ga")
+
+[node name="MinnieMouse" type="Sprite2D" parent="."]
+position = Vector2(638, 432)
+scale = Vector2(0.169563, 0.16956297)
+texture = ExtResource("2_hhi8e")
+
+[node name="Donald" type="Sprite2D" parent="."]
+position = Vector2(894, 492.99997)
+scale = Vector2(0.17524207, 0.17524208)
+texture = ExtResource("4_xuh7a")
+
+[node name="Daisy" type="Sprite2D" parent="."]
+position = Vector2(405.25, 458.3233)
+scale = Vector2(0.5770678, 0.5770678)
+texture = ExtResource("5_gr3qj")
+
+[node name="Goofy" type="Sprite2D" parent="."]
+position = Vector2(174.75, 466.65704)
+scale = Vector2(0.4843023, 0.48430234)
+texture = ExtResource("6_my56l")
+
+[node name="Pluto" type="Sprite2D" parent="."]
+position = Vector2(1126, 600)
+scale = Vector2(0.16450892, 0.16450892)
+texture = ExtResource("7_5fky2")
+flip_h = true
+
+[node name="Button" type="Button" parent="."]
+offset_left = 1121.0
+offset_right = 1279.0
+offset_bottom = 58.0
+text = "Credit"
+icon = ExtResource("8_xuh7a")
+icon_alignment = 1
+
+[node name="Player" parent="." instance=ExtResource("3_0du13")]
+position = Vector2(156, 591)
+rotation = 0.2617994
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Goofy")
+libraries = {
+&"": SubResource("AnimationLibrary_7fc25")
+}
+
+[node name="TextBox" parent="AnimationPlayer2" instance=ExtResource("9_5nxnd")]
+offset_left = 351.0
+offset_top = 80.0
+offset_right = 909.8169
+offset_bottom = 262.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Instructions2" type="Label" parent="AnimationPlayer2"]
+offset_left = 375.0
+offset_top = 127.0
+offset_right = 891.0
+offset_bottom = 235.0
+theme_override_fonts/font = ExtResource("10_mjj1n")
+theme_override_font_sizes/font_size = 32
+text = "Yay, you made it! Thank you so much for playing. (Credit is at top left)."
+autowrap_mode = 2
+visible_characters = 0
+visible_ratio = 0.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Instructions3" type="Label" parent="AnimationPlayer2"]
+anchors_preset = -1
+anchor_left = -0.146875
+anchor_right = -0.146875
+offset_left = 373.0
+offset_top = 87.0
+offset_right = 931.0
+offset_bottom = 118.0
+theme_override_font_sizes/font_size = 22
+text = "Minnie"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

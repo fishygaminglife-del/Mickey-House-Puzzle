@@ -1,0 +1,40 @@
+[gd_scene load_steps=4 format=3 uid="uid://cio8w4bbx2kj1"]
+
+[ext_resource type="Texture2D" uid="uid://2ni6wjgb6ijw" path="res://images/black-texture-background-gy5uqdi0tjs40qei.jpg" id="1_xknyl"]
+[ext_resource type="FontFile" uid="uid://dbfokxfuwriqs" path="res://fonts/Goldman/Goldman-Regular.ttf" id="2_5g4l2"]
+[ext_resource type="FontFile" uid="uid://i81x7klh0q1j" path="res://fonts/Chewy/Chewy-Regular.ttf" id="3_u0665"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="BlackTextureBackgroundGy5Uqdi0Tjs40Qei" type="Sprite2D" parent="."]
+position = Vector2(640.22235, 360)
+scale = Vector2(0.33425927, 0.33425927)
+texture = ExtResource("1_xknyl")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 1.0
+offset_top = 2.0
+offset_right = 1280.0
+offset_bottom = 168.0
+theme_override_fonts/font = ExtResource("2_5g4l2")
+theme_override_font_sizes/font_size = 50
+text = "CREDIT"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+offset_left = -1.0
+offset_top = 117.0
+offset_right = 1283.0
+offset_bottom = 594.0
+theme_override_fonts/font = ExtResource("3_u0665")
+theme_override_font_sizes/font_size = 20
+text = "
+Google Fonts for Chewy and Goldman
+
+Wallpapers.com for the different backgrounds
+
+Ar.inspired.pencil.com for the character faces
+
+Credit to Pintrest and Vecteezy for the rest of the images used"
+horizontal_alignment = 1

@@ -14,6 +14,7 @@ var first_card = null
 var second_card = null
 
 func _ready() -> void:
+	$TimesUp.visible = false
 	$GameCongradulations.visible = false
 	$AnimationPlayer/TextBox.visible = true
 	$AnimationPlayer.play("MemoryGame")
@@ -24,7 +25,7 @@ func _ready() -> void:
 func _process(delta):
 	if timer_running:
 		time_left -= delta
-		if time_left == 0:
+		if time_left <= 0:
 			timer_running = false
 			time_left = 0
 			time_up()
@@ -62,6 +63,8 @@ func game_complete():
 	get_tree().change_scene_to_file("res://scene/house2.tscn")
 	
 func time_up():
-	print("Time is Up!")
+	$TimesUp.visible = true
 	time_left = 0
+	await get_tree().create_timer(3.0).timeout
+	$TimesUp
 	get_tree().reload_current_scene()

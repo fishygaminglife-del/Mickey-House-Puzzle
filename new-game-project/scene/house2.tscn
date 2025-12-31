@@ -1,6 +1,6 @@
 [gd_scene load_steps=21 format=3 uid="uid://r0sbbpo64ejn"]
 
-[ext_resource type="Script" uid="uid://b7twgtdwngc3w" path="res://scene/house_2.gd" id="1_4wu4f"]
+[ext_resource type="Script" uid="uid://b7twgtdwngc3w" path="res://scripts/house_2.gd" id="1_4wu4f"]
 [ext_resource type="Texture2D" uid="uid://b6v4roe2xonsq" path="res://images/d914344c0d86cd0cc0408bfb74308b9f.jpg" id="2_41xku"]
 [ext_resource type="Texture2D" uid="uid://dgmopt8p5vmj4" path="res://images/box2.png" id="3_41xku"]
 [ext_resource type="PackedScene" uid="uid://brercndsqliux" path="res://scene/player.tscn" id="4_371fw"]
@@ -9,7 +9,7 @@
 [ext_resource type="Script" uid="uid://bolwrv400joqk" path="res://scripts/door.gd" id="5_7gtv7"]
 [ext_resource type="Texture2D" uid="uid://cfnrccodp4yjo" path="res://images/door.png" id="5_tqr75"]
 [ext_resource type="FontFile" uid="uid://i81x7klh0q1j" path="res://fonts/Chewy/Chewy-Regular.ttf" id="6_7gtv7"]
-[ext_resource type="Script" uid="uid://bhncyiby2afc4" path="res://scene/notepad_full.gd" id="7_7b831"]
+[ext_resource type="Script" uid="uid://bhncyiby2afc4" path="res://scripts/notepad_full.gd" id="7_7b831"]
 [ext_resource type="Texture2D" uid="uid://ul7vo018gowm" path="res://images/notepad.png" id="7_371fw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ae14o"]

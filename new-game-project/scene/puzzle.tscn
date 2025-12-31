@@ -1,7 +1,7 @@
 [gd_scene load_steps=17 format=3 uid="uid://pyfb77v0jnhj"]
 
 [ext_resource type="Texture2D" uid="uid://ch7o08dicx38r" path="res://images/Puzzle1BG.jpg" id="1_meen0"]
-[ext_resource type="Script" uid="uid://cq7unuldeuwk6" path="res://scene/puzzle1.gd" id="1_pfjpx"]
+[ext_resource type="Script" uid="uid://cq7unuldeuwk6" path="res://scripts/puzzle1.gd" id="1_pfjpx"]
 [ext_resource type="Texture2D" uid="uid://b5b2fw1tpr67b" path="res://images/PuzzleMatchFaces/CardBorder.png" id="2_0w0rs"]
 [ext_resource type="Texture2D" uid="uid://bxmb73gtoyhcg" path="res://images/PuzzleMatchFaces/MickeyFace.png" id="3_e244p"]
 [ext_resource type="Script" uid="uid://bvs428sxt6i68" path="res://scripts/card.gd" id="3_pfjpx"]
@@ -411,3 +411,12 @@ offset_bottom = 79.0
 theme_override_font_sizes/font_size = 22
 text = "Instructions"
 horizontal_alignment = 1
+
+[node name="TimesUp" type="Label" parent="."]
+offset_left = 524.0
+offset_top = 296.0
+offset_right = 824.0
+offset_bottom = 392.0
+theme_override_colors/font_color = Color(0.8509903, 0.114883535, 0.06382272, 1)
+theme_override_font_sizes/font_size = 60
+text = "Time's Up!"

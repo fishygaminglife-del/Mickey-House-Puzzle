@@ -1,11 +1,13 @@
-[gd_scene load_steps=77 format=3 uid="uid://df4ue3o3s0b7m"]
+[gd_scene load_steps=79 format=3 uid="uid://df4ue3o3s0b7m"]
 
 [ext_resource type="Texture2D" uid="uid://crv5hwhan2wup" path="res://images/maze.jpg" id="1_r0laq"]
-[ext_resource type="Script" uid="uid://cwqst6fyihh4r" path="res://scene/maze.gd" id="1_s8oxp"]
+[ext_resource type="Script" uid="uid://cwqst6fyihh4r" path="res://scripts/maze.gd" id="1_s8oxp"]
 [ext_resource type="PackedScene" uid="uid://brercndsqliux" path="res://scene/player.tscn" id="2_sfl3n"]
 [ext_resource type="Script" uid="uid://didavuult34vy" path="res://scripts/last_scene_transporter.gd" id="3_dtbne"]
 [ext_resource type="PackedScene" uid="uid://c858pibqkb3dw" path="res://text_box.tscn" id="4_dtbne"]
+[ext_resource type="FontFile" uid="uid://jc2m21dsw60s" path="res://fonts/Goldman/Goldman-Bold.ttf" id="4_jroyj"]
 [ext_resource type="FontFile" uid="uid://i81x7klh0q1j" path="res://fonts/Chewy/Chewy-Regular.ttf" id="5_88ram"]
+[ext_resource type="FontFile" uid="uid://dbfokxfuwriqs" path="res://fonts/Goldman/Goldman-Regular.ttf" id="5_nw208"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_klyal"]
 size = Vector2(71, 34.5)
@@ -682,6 +684,26 @@ shape = SubResource("RectangleShape2D_ua8ju")
 [node name="CollisionShape2D96" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(1210.5, 127)
 shape = SubResource("RectangleShape2D_cea2u")
+
+[node name="start" type="Label" parent="."]
+offset_left = -1.0
+offset_top = 663.0
+offset_right = 121.0
+offset_bottom = 702.0
+theme_override_colors/font_color = Color(0.005929131, 0, 0.98089164, 1)
+theme_override_fonts/font = ExtResource("4_jroyj")
+theme_override_font_sizes/font_size = 32
+text = "START"
+
+[node name="end" type="Label" parent="."]
+offset_left = 1205.0
+offset_top = 22.0
+offset_right = 1282.0
+offset_bottom = 61.0
+theme_override_colors/font_color = Color(0.64852774, 0.13469154, 0.122449465, 1)
+theme_override_fonts/font = ExtResource("5_nw208")
+theme_override_font_sizes/font_size = 32
+text = "END"
 
 [node name="Player" parent="." instance=ExtResource("2_sfl3n")]
 position = Vector2(22.000002, 685)
