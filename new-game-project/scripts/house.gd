@@ -8,13 +8,12 @@ func _ready() -> void:
 	$QuestItem.pressed.connect(box_pressed)
 	$AnimationPlayer/TextBox.visible = true
 	$AnimationPlayer.play("text")
-	await get_tree().create_timer(5).timeout
 	await $AnimationPlayer.animation_finished
 	$AnimationPlayer.play("text2")
-	await get_tree().create_timer(5).timeout
+	await $AnimationPlayer.animation_finished
 	$QuestItem/CollisionShape2D.disabled = false
 	$AnimationPlayer/TextBox.visible = false
-	await $AnimationPlayer.animation_finished
+
 	counter = 1
 	
 func box_pressed():
